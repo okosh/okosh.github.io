@@ -5,16 +5,16 @@ image_thumbs_loc: "/images/thumbs"
 google_analytics: ""
 
 # UI configs
-title: "Photography by Oleg Koshkarov"
-subtitle: "See the world through my eyes!"
-author: "Oleg Koshkarov"
+title: "Photography by Oleg Koshkarov / Фотограф Олег Кошкаров"
+subtitle: "Посмотрите на мир моими глазами!"
+author: "Oleg Koshkarov / Олег Кошкаров"
 header:
  title: "Photography"
- subtitle: "by Oleg Koshkarov"
+ subtitle: "by okosh"
 footer:
- name: "Hey there, my name is Oleg"
- bio: "I am a developer and a tech aficionado from India. Love making teeny tiny apps solving tiny problems in life and now learning photography."
- github: "Want a website like this for yourself for free? Just <a href=\"https://github.com/okosh/photography\">fork me on github</a> ;)"
-web_design: "AJ"
+ name: "Привет, меня зовут Олег"
+ bio: "Мне нравится сохранять в фотографии красоту, которая нас окружает и останавливать мгновения знаменательных событий."
+ github: "Больше фотографий можно посмотрет здесь <a href=\"http://okosh.gallery.ru\">Gallery.ru / Олег Кошкаров</a> ;)"
+web_design: "?"
 social_urls:
    github: "https://www.github.com/okosh"
