@@ -15,7 +15,7 @@ footer:
  name: "Привет, меня зовут Олег"
  bio: "Мне нравится сохранять в фотографии красоту, которая нас окружает
  и останавливать мгновения знаменательных событий."
- github: "Больше фотографий можно посмотрет здесь <a href=\"http://okosh.gallery.ru\">Gallery.ru / Олег Кошкаров</a>"
-web_design: "?"
+ github: "Больше фотографий можно посмотрет здесь <a href=\"http://okosh.gallery.ru\" target="_blank">Gallery.ru / Олег Кошкаров</a>"
+# web_design: "?"
 social_urls:
    github: "https://www.github.com/okosh"
