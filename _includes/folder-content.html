@@ -1,0 +1,25 @@
+<!-- Wrapper -->
+<div id="wrapper">
+
+    {% include header-nav.html %}
+  
+    <!-- Main -->
+    <div id="main">
+        {% assign path_fulls = page.permalink | remove: ".html" | append: "/fulls" | prepend: "images/" %}
+        {% assign path_thumbs = page.permalink | remove: ".html" | append: "/thumbs" | prepend: "images/" %}
+        {% for image in site.static_files %}
+        {% if image.path contains path_fulls %}
+        <article class="thumb">
+            <a href="{{ path_fulls }}/{{ image.name }}" class="image">
+                <img src="{{ path_thumbs }}/{{ image.name }}" alt=""
+                     data-name="{{ image.name }}"/></a>
+            <!--<h2></h2>
+            <p></p>-->
+        </article>
+        {% endif %}
+        {% endfor %}
+    </div>
+  
+    {% include footer-panel.html %}
+  
+  </div>
