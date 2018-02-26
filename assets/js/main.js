@@ -223,40 +223,58 @@
 
             var $this = $(this),
                 $image = $this.find('.image'), $image_img = $image.children('img'),
+                $folder = $this.find('.folder'), $folder_img = $folder.children('img'),
                 x;
 
             // No image? Bail.
-            if ($image.length == 0)
-                return;
+            if ($image.length > 0)
+            {
+                // Image.
+                // This sets the background of the "image" <span> to the image pointed to by its child
+                // <img> (which is then hidden). Gives us way more flexibility.
 
-            // Image.
-            // This sets the background of the "image" <span> to the image pointed to by its child
-            // <img> (which is then hidden). Gives us way more flexibility.
+                // Set background.
+                $image.css('background-image', 'url(' + $image_img.attr('src') + ')');
 
-            // Set background.
-            $image.css('background-image', 'url(' + $image_img.attr('src') + ')');
+                // Set background position.
+                if (x = $image_img.data('position'))
+                    $image.css('background-position', x);
 
-            // Set background position.
-            if (x = $image_img.data('position'))
-                $image.css('background-position', x);
+                // Hide original img.
+                $image_img.hide();
 
-            // Hide original img.
-            $image_img.hide();
+                // Hack: IE<11 doesn't support pointer-events, which means clicks to our image never
+                // land as they're blocked by the thumbnail's caption overlay gradient. This just forces
+                // the click through to the image.
+                if (skel.vars.IEVersion < 11)
+                    $this
+                        .css('cursor', 'pointer')
+                        .on('click', function () {
+                            $image.trigger('click');
+                        });
 
-            // Hack: IE<11 doesn't support pointer-events, which means clicks to our image never
-            // land as they're blocked by the thumbnail's caption overlay gradient. This just forces
-            // the click through to the image.
-            if (skel.vars.IEVersion < 11)
-                $this
-                    .css('cursor', 'pointer')
-                    .on('click', function () {
-                        $image.trigger('click');
-                    });
+                // EXIF data					
+                EXIF.getData($image_img[0], function () {
+                    exifDatas[$image_img.data('name')] = getExifDataMarkup(this);
+                });
+            }
 
-            // EXIF data					
-            EXIF.getData($image_img[0], function () {
-                exifDatas[$image_img.data('name')] = getExifDataMarkup(this);
-            });
+            if ($folder.length > 0)
+            {
+                $folder.css('background-image', 'url(' + $folder_img.attr('src') + ')');
+
+                if (x = $folder_img.data('position'))
+                    $folder_img.css('background-position', x);
+
+                $folder_img.hide();
+
+                if (skel.vars.IEVersion < 11)
+                    $this
+                        .css('cursor', 'pointer')
+                        .on('click', function () {
+                            $folder.trigger('click');
+                        });
+            }
 
         });
 
