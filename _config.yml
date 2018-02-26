@@ -1,7 +1,5 @@
 # Base configs
-baseurl: "https://okosh.github.io"
-image_fulls_loc: "/images/fulls"
-image_thumbs_loc: "/images/thumbs"
+baseurl: ""
 google_analytics: ""
 
 # UI configs
@@ -15,7 +13,7 @@ footer:
  name: "Привет, меня зовут Олег"
  bio: "Мне нравится сохранять в фотографии красоту, которая нас окружает
  и останавливать мгновения знаменательных событий."
- github: "Больше фотографий можно посмотрет здесь <a href=\"http://okosh.gallery.ru\" target="_blank">Gallery.ru / Олег Кошкаров</a>"
+ github: "Больше фотографий можно посмотреть здесь: <a href='http://okosh.gallery.ru' target='_blank'>Gallery.ru / Олег Кошкаров</a>"
 # web_design: "?"
 social_urls:
    github: "https://www.github.com/okosh"
